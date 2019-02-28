@@ -5,7 +5,8 @@
 void SystemClock_Config(void);
 
 int main(void) {
-    HAL_Init();
+    while(1);
+/*    HAL_Init();
     SystemClock_Config();
     Led_Init();
     while (1) {
@@ -15,7 +16,7 @@ int main(void) {
         HAL_Delay(200);
         Led_On(1);
         Led_Off(0);
-    }
+    }*/
 
 }
 
@@ -98,12 +99,3 @@ void assert_failed(uint8_t* file, uint32_t line)
 }
 #endif /* USE_FULL_ASSERT */
 
-/**
-  * @}
-  */
-
-/**
-  * @}
-  */
-
-/************************ (C) COPYRIGHT STMicroelectronics *****END OF FILE****/

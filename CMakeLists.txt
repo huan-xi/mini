@@ -15,7 +15,7 @@ set(OBJDUMP arm-none-eabi-objdump)
 set(SIZE arm-none-eabi-size)
 
 
-SET(LINKER_SCRIPT ${CMAKE_SOURCE_DIR}/STM32F103RCTx_FLASH.ld)
+SET(LINKER_SCRIPT ${CMAKE_SOURCE_DIR}/STM32F103RCTx_FLASH.ld Src/key.c Inc/key.h)
 
 #Uncomment for hardware floating point
 #SET(FPU_FLAGS "-mfloat-abi=hard -mfpu=fpv4-sp-d16")
@@ -38,7 +38,7 @@ set(CMAKE_CXX_STANDARD 11)
 #add_definitions(-DARM_MATH_CM4 -DARM_MATH_MATRIX_CHECK -DARM_MATH_ROUNDING -D__FPU_PRESENT=1)
 add_definitions(-D__weak=__attribute__\(\(weak\)\) -D__packed=__attribute__\(\(__packed__\)\) -DUSE_HAL_DRIVER -DSTM32F103xE)
 
-file(GLOB_RECURSE SOURCES "startup/*.*" "Drivers/*.*" "Src/*.*" "Inc/*.*")
+file(GLOB_RECURSE SOURCES "startup/*.*" "Drivers/*.*" "Src/*.*" "Inc/*.*" "Self/*.*")
 
 include_directories(Inc Drivers/STM32F1xx_HAL_Driver/Inc Drivers/STM32F1xx_HAL_Driver/Inc/Legacy Drivers/CMSIS/Device/ST/STM32F1xx/Include Drivers/CMSIS/Include)
 
