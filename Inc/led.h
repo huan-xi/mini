@@ -4,11 +4,11 @@
 
 #ifndef MINI_LED_H
 #define MINI_LED_H
-
-#include <stm32f1xx_hal_conf.h>
+#include "stm32f1xx.h"
 
 #define LED0 GPIO_PIN_8
 #define LED1 GPIO_PIN_2
 void Led_Init();
-
+void Led_On(int);
+void Led_Off(int);
 #endif //MINI_LED_H

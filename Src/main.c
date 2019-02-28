@@ -1,13 +1,20 @@
 #include "main.h"
 #include "stm32f1xx_hal.h"
 #include "led.h"
+
 void SystemClock_Config(void);
 
 int main(void) {
     HAL_Init();
     SystemClock_Config();
+    Led_Init();
     while (1) {
-        Led_Init();
+        HAL_Delay(200);
+        Led_On(0);
+        Led_Off(1);
+        HAL_Delay(200);
+        Led_On(1);
+        Led_Off(0);
     }
 
 }
