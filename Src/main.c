@@ -1,22 +1,24 @@
 #include "main.h"
 #include "stm32f1xx_hal.h"
-#include "led.h"
+#include "bsp/led.h"
+#include "bsp/beep.h"
+#include "bsp/key.h"
 
 void SystemClock_Config(void);
 
 int main(void) {
-    while(1);
-/*    HAL_Init();
+    int val;
+    HAL_Init();
     SystemClock_Config();
     Led_Init();
+//    Beep_Init();
+    Key_Init();
     while (1) {
-        HAL_Delay(200);
-        Led_On(0);
-        Led_Off(1);
-        HAL_Delay(200);
-        Led_On(1);
-        Led_Off(0);
-    }*/
+        val = Key_Scan(0);
+        if (val == 1) {
+            LED0 = !LED0;
+        } else if (val == 2)LED1 = !LED1;
+    }
 
 }
 

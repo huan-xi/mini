@@ -4,12 +4,13 @@
 
 #ifndef MINI_LED_H
 #define MINI_LED_H
-#include "sys.h"
 
+#include "sys.h"
+#define LED0 PAout(8)
+#define LED1 PDout(8)
 #define LED0_PIN GPIO_PIN_8
 #define LED1_PIN GPIO_PIN_2
-#define LED0 PAOut(8)
-#define LED1 PDOut(8)
+
 
 void Led_Init();
 void Led_On(int);

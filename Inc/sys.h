@@ -1,6 +1,6 @@
 #ifndef __SYS_H
 #define __SYS_H
-#include "stm32f1xx.h"
+#include "stm32f1xx_hal.h"
 //////////////////////////////////////////////////////////////////////////////////
 //本程序只供学习使用，未经作者许可，不得用于其它任何用途
 //ALIENTEK STM32开发板
@@ -68,6 +68,6 @@
 void WFI_SET(void);		//执行WFI指令
 void INTX_DISABLE(void);//关闭所有中断
 void INTX_ENABLE(void);	//开启所有中断
-void MSR_MSP(unsigned long addr);	//设置堆栈地址
+void MSR_MSP(unsigned int addr);	//设置堆栈地址
 
 #endif
