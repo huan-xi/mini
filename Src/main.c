@@ -3,21 +3,21 @@
 #include "bsp/led.h"
 #include "bsp/beep.h"
 #include "bsp/key.h"
+#include "usart.h"
+#include "delay.h"
 
 void SystemClock_Config(void);
 
 int main(void) {
-    int val;
     HAL_Init();
-    SystemClock_Config();
     Led_Init();
-//    Beep_Init();
-    Key_Init();
     while (1) {
-        val = Key_Scan(0);
-        if (val == 1) {
-            LED0 = !LED0;
-        } else if (val == 2)LED1 = !LED1;
+//        printf("hello world");
+//        Led_On(0);
+//        BEEP=0;
+        HAL_Delay(100);
+        Led_Off(0);
+//        BEEP=1;
     }
 
 }

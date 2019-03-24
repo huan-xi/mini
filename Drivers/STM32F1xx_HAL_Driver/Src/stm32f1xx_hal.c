@@ -218,6 +218,7 @@ __weak void HAL_MspInit(void)
   /* NOTE : This function should not be modified, when the callback is needed,
             the HAL_MspInit could be implemented in the user file
    */
+  NVIC_SetPriorityGrouping(NVIC_PRIORITYGROUP_2);
 }
 
 /**

@@ -18,14 +18,14 @@ void Led_Init() {
     HAL_GPIO_WritePin(GPIOD, LED1_PIN, GPIO_PIN_SET);
 }
 
-void Led_On(int led) {
+void Led_On(uint8_t led) {
     if (led == 0) {
         HAL_GPIO_WritePin(GPIOA, LED0_PIN, GPIO_PIN_SET);
     } else {
         HAL_GPIO_WritePin(GPIOD, LED1_PIN, GPIO_PIN_RESET);
     }
 }
-void Led_Off(int led) {
+void Led_Off(uint8_t  led) {
     if (led == 0) {
         HAL_GPIO_WritePin(GPIOA, LED0_PIN, GPIO_PIN_RESET);
     } else {

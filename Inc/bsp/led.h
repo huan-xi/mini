@@ -13,6 +13,6 @@
 
 
 void Led_Init();
-void Led_On(int);
-void Led_Off(int);
+void Led_On(uint8_t );
+void Led_Off(uint8_t );
 #endif //MINI_LED_H

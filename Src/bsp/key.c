@@ -7,12 +7,13 @@
 /**
  * KEY0,KEY1 默认上拉
  */
-void Key_Init() {
+void Key_Init(){
     GPIO_InitTypeDef gpioInitTypeDef;
     __HAL_RCC_GPIOA_CLK_ENABLE();
     __HAL_RCC_GPIOC_CLK_ENABLE();
+
     gpioInitTypeDef.Pin = KEY0_PIN;
-    gpioInitTypeDef.Mode = GPIO_MODE_INPUT;
+    gpioInitTypeDef.Mode = GPIO_MODE_IT_FALLING;
     gpioInitTypeDef.Pull = GPIO_PULLUP;
     HAL_GPIO_Init(GPIOC, &gpioInitTypeDef); //上拉输入
 
@@ -23,9 +24,13 @@ void Key_Init() {
     gpioInitTypeDef.Pin = KEY_UP_PIN;
     gpioInitTypeDef.Pull = GPIO_PULLDOWN;
     HAL_GPIO_Init(GPIOA, &gpioInitTypeDef);
+}
+/**
+ * 中断触发
+ */
+void Key_Init_Int(){
 
 }
-
 
 u8 Key_Scan(u8 mode) {
     static u8 key_up = 1; //按键是否松开
